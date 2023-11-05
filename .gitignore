@@ -1,4 +1,18 @@
+# Temporary files
+~$*
+
+# macOS metadata
+.DS_Store
+
+# SASS intermediate files
 .sass-cache/
 *.css.map
 *.sass.map
 *.scss.map
+resources/
+
+# Hugo files
+.hugo_build.lock
+hugo_build
+build/
+public/

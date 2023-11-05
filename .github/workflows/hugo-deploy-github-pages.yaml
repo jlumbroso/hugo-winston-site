@@ -1,0 +1,55 @@
+name: 🏗️ Build and Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Set a branch to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions: # Set the permissions for the GITHUB_TOKEN
+      contents: write # This grants the token the ability to write to the repository, which is necessary for pushing changes to the gh-pages branch
+      # You can add other permissions as needed, for example:
+      # issues: read
+      # pull-requests: read
+    steps:
+      - name: 🔄 Check Out Source Repository
+        uses: actions/checkout@v3.5.1
+        with:
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      # - name: 🧩 Setup Node.js for Theme Build
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 12
+      #
+      # - name: ⚙️ Initiate Geekdoc Theme Build (1/2)
+      #   working-directory: ./themes/hugo-geekdoc
+      #   run: npm install
+      #
+      # - name: 🏭 Complete Geekdoc Theme Build (2/2)
+      #   working-directory: ./themes/hugo-geekdoc
+      #   run: gulp
+
+      - name: 🛠️ Initialize Hugo Environment
+        uses: peaceiris/actions-hugo@v2.6.0
+        with:
+          hugo-version: "0.120.3"
+          extended: true
+
+      - name: 🏗️ Compile Hugo Static Files
+        run: hugo -D --gc
+
+      - name: 🔐 Secure Content with Encryption
+        run: curl -L -o hugo-encrypt "https://github.com/Izumiko/hugo-encrypt/releases/download/v0.1.0/hugo-encrypt-linux-64" && chmod 755 hugo-encrypt && ./hugo-encrypt
+
+      - name: 🚀 Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          #cname: ...
