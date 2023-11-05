@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hugo Winston Theme</title>
-    <link>/hugo-winston-example/tags/</link>
+    <link>/hugo-winston-site/tags/</link>
     <description>Recent content in Tags on Hugo Winston Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/hugo-winston-example/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/hugo-winston-site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>lorem</title>
-      <link>/hugo-winston-example/tags/lorem/</link>
+      <link>/hugo-winston-site/tags/lorem/</link>
       <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/hugo-winston-example/tags/lorem/</guid>
+      <guid>/hugo-winston-site/tags/lorem/</guid>
       <description></description>
     </item>
     <item>
       <title>writing</title>
-      <link>/hugo-winston-example/tags/writing/</link>
+      <link>/hugo-winston-site/tags/writing/</link>
       <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/hugo-winston-example/tags/writing/</guid>
+      <guid>/hugo-winston-site/tags/writing/</guid>
       <description></description>
     </item>
     <item>
       <title>time</title>
-      <link>/hugo-winston-example/tags/time/</link>
+      <link>/hugo-winston-site/tags/time/</link>
       <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>/hugo-winston-example/tags/time/</guid>
+      <guid>/hugo-winston-site/tags/time/</guid>
       <description></description>
     </item>
   </channel>
